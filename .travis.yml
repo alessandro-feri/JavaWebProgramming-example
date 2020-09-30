@@ -1,0 +1,19 @@
+language: java
+
+dist: xenial
+
+jdk: openjdk8
+
+services:
+   - docker
+   - xvfb
+
+# skip installation step
+install: true
+
+cache:
+   directories:
+      - $HOME/.m2
+script:
+   - mvn -f hello-servlet/pom.xml clean verify
+
